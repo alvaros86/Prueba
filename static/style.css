@@ -1,0 +1,106 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0; /* Reset padding first */
+    padding-top: 70px; /* Space for top banner (60px height + 10px margin) */
+    padding-bottom: 70px; /* Space for bottom banner (60px height + 10px margin) */
+    height: 100%;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+#map {
+    height: 100%; /* This will fill the available space within the padded body */
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Just in case any borders are added to map directly */
+    /* position: relative; is not strictly needed unless child elements are positioned absolutely *relative* to the map itself. */
+}
+
+#incidentForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 1002; /* Ensure form is above bottom ad */
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.advertisement-placeholder {
+    width: 100%;
+    height: 60px; /* Adjusted height */
+    background-color: #e9e9e9; /* Lighter background */
+    border: 1px dashed #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 14px; /* Placeholder text size */
+    color: #555; /* Placeholder text color */
+}
+
+#ad-banner-top {
+    margin-bottom: 10px; /* Space between top ad and map/form */
+    position: fixed; /* Fixed at the top */
+    top: 0;
+    left: 0;
+    z-index: 1001; /* Ensure it's above the map, but below the form if form z-index is higher */
+}
+
+#ad-banner-bottom {
+    margin-top: 10px; /* Space if content flows above it, less relevant if fixed */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1001; /* Ensure it's above the map, but below the form if form z-index is higher */
+}
+
+#incidentForm div {
+    margin-bottom: 15px; /* Increased margin for better spacing */
+}
+
+#incidentForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /* Added for better label visibility */
+}
+
+#incidentForm select,
+#incidentForm textarea {
+    width: 100%; /* Changed from calc to 100% due to box-sizing */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Crucial for width: 100% to work as expected */
+}
+
+#incidentForm textarea {
+    resize: vertical;
+    min-height: 60px; /* Provide a minimum height */
+}
+
+#incidentForm button[type="submit"] {
+    width: 100%; /* Changed from calc to 100% */
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Added for better button text visibility */
+}
+
+#incidentForm button[type="submit"]:hover {
+    background-color: #0056b3;
+}
